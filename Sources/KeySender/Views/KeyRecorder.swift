@@ -22,7 +22,7 @@ public struct KeyRecorder: View {
 	var keysString: String {
 		let keys: String = keys.map({ $0.stringValue }).joined()
 		let modifiers: String = modifiers.map({ $0.stringValue }).joined()
-		return keys + modifiers
+		return "\(keys)\(modifiers)".uppercased()
 	}
 	
 	public var body: some View {
@@ -32,7 +32,7 @@ public struct KeyRecorder: View {
 				resetButton
 			}
 		}
-		.frame(minWidth: 150)
+		.frame(minWidth: 200)
 		.onAppear {
 			addKeyDownMonitor()
 		}
