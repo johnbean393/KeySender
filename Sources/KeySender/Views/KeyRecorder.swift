@@ -29,6 +29,7 @@ public struct KeyRecorder: View {
 		GroupBox {
 			HStack {
 				Text(keysString)
+					.frame(minWidth: 200, minHeight: 50)
 				resetButton
 			}
 		}
