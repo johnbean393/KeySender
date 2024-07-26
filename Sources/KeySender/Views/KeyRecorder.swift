@@ -32,7 +32,7 @@ public struct KeyRecorder: View {
 				resetButton
 			}
 		}
-		.frame(minWidth: 70, minHeight: 20)
+		.frame(minWidth: 150)
 		.onAppear {
 			addKeyDownMonitor()
 		}
