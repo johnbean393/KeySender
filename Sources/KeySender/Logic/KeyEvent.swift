@@ -637,7 +637,7 @@ extension KeyEvent {
             case .tab:
                 return "\t"
             case .space:
-                return " "
+                return "􁁺"
             case .delete:
                 return "⌫"
             case .forwardDelete:
