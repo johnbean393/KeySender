@@ -34,6 +34,29 @@ let sender = KeySender(key: .space, modifiers: .command)
 sender.sendGlobally()
 ```
 
+This fork of KeySender provides a `KeyRecorder` view, which you can use to record keys pressed.
+
+```swift
+struct MyView: View {
+
+	@State private var keys: [KeyEvent.Key] = []
+	@State private var modifier: [KeyEvent.Modifier] = []
+	
+	var body: some View {
+		HStack {
+			Text("Record a shortcut:")
+			KeyRecorder(
+				keys: $keys
+				modifer: $keys
+			)
+		}
+	}
+	
+}
+
+}
+```
+
 ## Source Stability
 
 As KeySender is under active development, source stability is not guaranteed between releases.
