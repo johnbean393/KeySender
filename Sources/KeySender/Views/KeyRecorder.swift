@@ -8,6 +8,11 @@
 import SwiftUI
 
 public struct KeyRecorder: View {
+
+	public init(keys: Binding<[KeyEvent.Key]>, modifiers: Binding<[KeyEvent.Modifier]>) {
+		self._keys = keys
+		self._modifiers = modifiers
+	}
 	
 	@State private var keyDownMonitor: Any? = nil
 	
