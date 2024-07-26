@@ -29,10 +29,10 @@ public struct KeyRecorder: View {
 		GroupBox {
 			HStack {
 				Text(keysString)
-					.frame(minWidth: 200, minHeight: 50)
 				resetButton
 			}
 		}
+		.frame(minWidth: 70, minHeight: 20)
 		.onAppear {
 			addKeyDownMonitor()
 		}
@@ -48,6 +48,7 @@ public struct KeyRecorder: View {
 			Label("Reset", systemImage: "xmark.circle.fill")
 				.labelStyle(.iconOnly)
 		}
+		.buttonStyle(PlainButtonStyle())
 	}
 	
 	private func addKeyDownMonitor() {
