@@ -5,7 +5,7 @@ import PackageDescription
 let package = Package(
     name: "KeySender",
     platforms: [
-        .macOS(.v10_13),
+        .macOS(.v13),
     ],
     products: [
         .library(

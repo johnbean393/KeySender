@@ -38,8 +38,9 @@ extension KeyEvent: Hashable { }
 // MARK: - KeyEvent.Key
 
 extension KeyEvent {
+	
     /// Constants that represent the various keys available on a keyboard.
-    public enum Key: CaseIterable {
+    public enum Key: CaseIterable, Codable {
 
         // MARK: ANSI
 
@@ -735,8 +736,6 @@ extension KeyEvent {
     }
 }
 
-extension KeyEvent.Key: Codable { }
-
 extension KeyEvent.Key: Equatable { }
 
 extension KeyEvent.Key: Hashable { }
@@ -744,8 +743,9 @@ extension KeyEvent.Key: Hashable { }
 // MARK: - KeyEvent.Modifier
 
 extension KeyEvent {
+	
     /// Constants that represent modifier keys associated with a key event.
-    public enum Modifier {
+	public enum Modifier: CaseIterable, Codable {
         /// The Caps Lock key.
         case capsLock
 
@@ -773,24 +773,24 @@ extension KeyEvent {
         // MARK: Instance Properties
 
         var rawValue: CGEventFlags {
-            switch self {
-            case .capsLock:
-                return .maskAlphaShift
-            case .command:
-                return .maskCommand
-            case .control:
-                return .maskControl
-            case .function:
-                return .maskSecondaryFn
-            case .help:
-                return .maskHelp
-            case .numPad:
-                return .maskNumericPad
-            case .option:
-                return .maskAlternate
-            case .shift:
-                return .maskShift
-            }
+			switch self {
+				case .capsLock:
+					return .maskAlphaShift
+				case .command:
+					return .maskCommand
+				case .control:
+					return .maskControl
+				case .function:
+					return .maskSecondaryFn
+				case .help:
+					return .maskHelp
+				case .numPad:
+					return .maskNumericPad
+				case .option:
+					return .maskAlternate
+				case .shift:
+					return .maskShift
+			}
         }
 
         /// A string representation of the modifier.
@@ -826,8 +826,6 @@ extension KeyEvent {
         }
     }
 }
-
-extension KeyEvent.Modifier: Codable { }
 
 extension KeyEvent.Modifier: Equatable { }
 
